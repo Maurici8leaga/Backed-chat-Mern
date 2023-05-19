@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS" /* esto es para definir que nuestro código compilado luego pasará a JS */,
+    "lib": ["DOM", "ES2015"] /* Establece el estándar final generado a partir de la compilación */,
+    "esModuleInterop": true /* esto es para asegurarnos de darle soporte a nuestro JS de acuerdo al TS compilado */,
+    "resolveJsonModule": true /* nos permite intepretar importaciones de archivos .json */,
+    "moduleResolution": "node" /* esto nos permite verificar la inclusión de TS de forma explícita en node */,
+    "target": "ES2015" /* aquí defines tu estandarización del ECMMA */,
+    "noImplicitAny": true /* esto me permite que no me de recomendaciones de tipos any */,
+    "sourceMap": true /* esto me permite habilitar un archivo fuente de js donde vaya a caer todo el código final */,
+    "experimentalDecorators": true /* esto me permite darle soporte a decoradores */,
+    "emitDecoratorMetadata": true /* esto me permite que la definición de los decoradores persista en tiempo de ejecución */,
+    "strict": true /* te permite habilitar el modo estricto para que te de sugerencias/recomendaciones de código en base al ECMMA */,
+    "baseUrl": "./" /* te permite definir el path donde se creará tu carpeta de distribución con el código final */,
+    "outDir": "./cache" /* te permite darle el nombre a la carpeta de distribución */,
+    "forceConsistentCasingInFileNames": true /* Establece la fuerza de mayúsculas y minúsculas */,
+    "allowSyntheticDefaultImports": true /* Establece el soporte de exportaciones sin nombre para que cuando yo las importe no existan problemas al darle el alias */,
+    "pretty": true /* Establece es una compilación limpia y legible */,
+    "noUnusedLocals": false /* Establece tu compilación sin aviso de variables no usadas */,
+    "noUnusedParameters": false /* Establece tu compilación sin aviso de variables no usadas */,
+    "plugins": [
+      //pluggins para typescript-transform-paths
+      { "transform": "typescript-transform-paths" }, // para transformar las rutas
+      { "transform": "typescript-transform-paths", "afterDeclarations": true } //para que halla persistencia de la transformacion despues de declarar
+    ],
+    "paths": {
+      //aqui van los alias que llevaran las rutas
+      "@bootstrap/*": ["src/bootstrap/*"], // los nombres van a depender de cada carpeta no son estrictos
+      "@configs/*": ["src/configs/*"], //debe ir obligatorio el /* ya que especifica que todo que venga despues usara ese alias
+      "@auth/*": ["src/features/auth/*"],
+      "@user/*": ["src/features/user/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@decorators/*": ["src/shared/globals/decorators/*"],
+      "@helpers/*": ["src/shared/globals/helpers/*"],
+      "@services/*": ["src/shared/globals/services/*"],
+      "@workers/*": ["src/shared/globals/workers/*"],
+      "@root/*": ["src/*"] // siempre debe ir de ultimo root ya que si se declara 1ro sobre escribira a las demas
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ] /* te permite incluir en el proceso de compilación tu directorio de trabajo donde tienes tus .ts */,
+  "exclude": [
+    "node_modules",
+    "src/features/auth/controllers/test",
+    "src/bootstrap/test",
+    "src/shared/globals/mocks"
+  ] /* te permite excluir del proceso de compilación el node_modules */
+}
