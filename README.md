@@ -43,4 +43,4 @@ yarn run dev
 
 ### ABOUT
 
-This project was built with bull-board/express, sendgrid/mail, bcryptjs, bull, bullmq, ocket.io/redis-adapter, bunyan, cloudinary, compression, cookie-session, cors, dotenv, ejs, express, express-async-errors, helmet, hpp, http-status-codes, ip, joi, jsonwebtoken, lodash, moment, mongoose, nodemailer, redis, socket.io .
+This project was built with bull-board/express, sendgrid/mail, bcryptjs, bull, bullmq, socket.io/redis-adapter, bunyan, cloudinary, compression, cookie-session, cors, dotenv, ejs, express, express-async-errors, helmet, hpp, http-status-codes, ip, joi, jsonwebtoken, lodash, moment, mongoose, nodemailer, redis, socket.io .
