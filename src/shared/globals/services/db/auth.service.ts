@@ -22,8 +22,8 @@ class AuthService {
       // el operador logico "$or" es un operador de mongoDB, retorna el documento que coincida con la condicion pasada, este caso
       // o el email o el username
       $or: [{ username: Generators.firstLetterUppercase(username) }, { email: Generators.lowerCase(email) }]
-      // el metotdo "firstLetterUppercase" del Generators colocara la primera letra en mayuscula y las demas en minuscula
-      // y en el caso de "lowerCase" todo en minuscula
+      // se debe implementar los metodos "firstLetterCapitalized" y "allLetterLowercase" ya que de existir este user o email
+      // fueron guardos con este formato que retorna estos metodos
     };
     const user: IAuthDocument = (await AuthModel.findOne(query).exec()) as IAuthDocument;
     // el metodo "findOne" es de mongoose, el cual sirve para encontrar un documento pasandole query el cual sera un argumento de este documento

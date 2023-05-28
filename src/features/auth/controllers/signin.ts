@@ -17,7 +17,7 @@ export class SignIn {
   public async read(req: Request, res: Response): Promise<void> {
     const { username, password } = req.body;
     const existingUser: IAuthDocument = await authService.getAuthUserByUsername(username);
-    // se usa el metodo "getUserByUsernameOrEmail" de authService para buscaar el usuario
+    // se usa el metodo "getUserByUsername" de authService para buscaar el usuario
 
     if (!existingUser) {
       // si existe se mandara un mensaje de error
