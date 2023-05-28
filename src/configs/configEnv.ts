@@ -1,14 +1,10 @@
-// Este file es para manejar de una forma organizadas las variables de entorno de la app BUENA PRACTICA
 import dotenv from 'dotenv';
 import cloudinary from 'cloudinary';
 
 dotenv.config({});
-// el metodo "config" de dotenv permite poder llamar las variables globales que se tengan en .el archivo .env y asi poder usarlas
 
 class Config {
-  // aqui iran toda las variables que existan en el file .env
   public DATABASE_URL: string | undefined;
-  // creamos las propiedad publicas porque queremos poder acceder a ellas en otros lugares
   public JWT_TOKEN: string | undefined;
   public NODE_ENV: string | undefined;
   public SECRET_KEY_ONE: string | undefined;
@@ -28,10 +24,8 @@ class Config {
   public SENGRID_SENDER: string | undefined;
   public RANDOM_BYTES: string | undefined;
 
-  // inicializando las variables
   constructor() {
     this.DATABASE_URL = process.env.DATABASE_URL;
-    // "process.env" es la que permite poder apuntar a esta variable
     this.JWT_TOKEN = process.env.JWT_TOKEN;
     this.NODE_ENV = process.env.NODE_ENV;
     this.SECRET_KEY_ONE = process.env.SECRET_KEY_ONE;
@@ -52,24 +46,17 @@ class Config {
     this.RANDOM_BYTES = process.env.RANDOM_BYTES;
   }
 
-  // se crea un metodo publico para validar que estas variables de entorno no esten vacias
-  // es  un metodo util de verificacion
   public validateConfig(): void {
     console.log(this);
     for (const [key, value] of Object.entries(this)) {
-      // "key" para los nombres de las variables, "value" el valor que contienen
       if (value === undefined) {
-        // se active un error por si la variable esta vacia
         throw new Error(`Configuration ${key} is undefined`);
       }
     }
-    // esto va a retornar un arrays de stings con su key y valor
   }
 
-  // se crea un metodo publico para las configuraciones de cloudinary
   public cloudinaryConfig(): void {
     cloudinary.v2.config({
-      // el metodo config es de la version 2  de cloudinary necesita que se le pase  las credenciales, las cuales estan en las variables de entorno
       cloud_name: this.CLOUD_NAME,
       api_key: this.CLOUD_API_KEY,
       api_secret: this.CLOUD_API_SECRET
