@@ -1,4 +1,4 @@
-root = true # set to true for root directory working
+root = true
 
 [*]
 indent_style = space
@@ -8,9 +8,9 @@ end_of_line = lf
 insert_final_newline = true
 charset = utf-8
 
-[*.ts] #set config para solo extensiones ts
-quote_type = single # para especificar comillas simples o dobles
+[*.ts]
+quote_type = single
 
 [*.md]
-max_line_length = off #se coloca off este config para que en los file .md no halla limite de caracteres por linea
-trim_trailing_whitespace = false #se coloca off aca para que permita que halla espacios en blancos entre lineas
+max_line_length = off
+trim_trailing_whitespace = false

@@ -6,27 +6,27 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier" //se agrega prettier ya quese instalo  eslint-config-prettier
+    "prettier"
   ],
   "parserOptions": {
-    "ecmaVersion": 2020, //se especifica que version del ecma se va usar
-    "sourceType": "module" //determina el tipo origenes de los archivos que van a ser procesados
+    "ecmaVersion": 2020,
+    "sourceType": "module"
   },
   "rules": {
-    "semi": [2, "always"], //es reforzar los semicolons ( ; ) al final de cada elemento
+    "semi": [2, "always"],
     "quotes": ["error", "single"],
-    "space-before-function-paren": [0, { "anonymous": "always", "named": "always" }], //es para agregar un espacio en las estructuras de contexto de funciones, anonimas , arrow function, funciones regulares o sin nombre.
-    "@typescript-eslint/no-non-null-assertion": "off", // permite especificar definiciones sin null para los types de los parametros.
-    "no-return-assing": 0, //permite retornar asignaciones en una sola linea.
-    "camelcase": 0, //permite especificar si vas a usar Camel case para las variables o propiedades.
+    "space-before-function-paren": [0, { "anonymous": "always", "named": "always" }],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-return-assing": 0,
+    "camelcase": 0,
     "@typescript-eslint/no-explicit-any": ["warn"],
     "curly": "error",
     "no-empty": "error",
-    "@typescript-eslint/no-unused-vars": "warn", //es para notificar que tienes definiciones sin usar.
-    "@typescript-eslint/explicit-module-boundary-types": "off", //permite tener no tener que volver a redefinir types establecidos
-    "@typescript-eslint/no-namespace": "off", //permite habilitar las declaraciones globales para generar contextos
+    "@typescript-eslint/no-unused-vars": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-var-requires": "off", //este es para poder usar el "require" en las importaciones, al colocar off se deshabilita
-    "no-undef": "off" //este se usa para controlar el uso de variable no definidas, con off la desahabilitamos OJO SE HACE SOLO YA CUANDO VAMOS A USAR GULP
+    "@typescript-eslint/no-var-requires": "off",
+    "no-undef": "off"
   }
 }

@@ -1,11 +1,5 @@
-# Esto es un REST Client extension mas info en https://marketplace.visualstudio.com/items?itemName=humao.rest-client
 @baseUrl = http://localhost:5001
 @urlPath = api/v1
-# para crear una variable se usa el "@"+nombre y luego su valor
-
-# DATO EN ESTE DOCUMENT SE PUEDE HACER MAS DE 1 RESQUEST PERO DEBE SEPARARSE CON ###
-
-# OJO los headers: "Accept" y "withCredentials" son nombres de headers predeterminados y deben ir siempre
 
 ###
 POST {{baseUrl}}/{{urlPath}}/signup
